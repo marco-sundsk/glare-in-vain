@@ -27,11 +27,7 @@ def load_score_file(filepath_postfix):
 def parse_round(round):
     profit = sum(round)
     score_report = [0-x for x in round]
-    winner_idx = 0
-    for i in range(0, len(round)):
-        if round[i] == 0:
-            winner_idx = i
-            break
+    winner_idx = round.index(0)
     score_report[winner_idx] = profit
     return score_report
 
