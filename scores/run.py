@@ -45,11 +45,14 @@ def print_rounds(users, rounds):
 
 
 def gen_net_profit(rounds):
-    profit = [0] * len(rounds)
+    profit = []
     for round in rounds:
         scores = parse_round(round)
         for i in range(0, len(scores)):
-            profit[i] += scores[i]
+            if i >= len(profit):
+                profit.append(scores[i])
+            else:
+                profit[i] += scores[i]
     return profit
 
 
